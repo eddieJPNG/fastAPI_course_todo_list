@@ -12,4 +12,3 @@ def test_root_must_return_hello_world_and_ok():
 
     assert response.status_code == HTTPStatus.OK
     assert response.json() == {'message': 'Hello, World!'}
-    
