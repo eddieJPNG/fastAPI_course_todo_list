@@ -14,10 +14,20 @@ def test_root_must_return_hello_world_and_ok():
     assert response.json() == {'message': 'Hello, World!'}
 
 
-def test_nome_must_be_return_html_and_ok():
+def test_create_user():
     client = TestClient(app)
 
-    response = client.get('/home')
-
-    assert response.status_code == HTTPStatus.OK
-    assert response.headers['content-type'] == 'text/html; charset=utf-8'
+    response = client.post(
+        '/users/',
+        json={
+            'username': 'john_doe',
+            'email': 'johndoe34@gmail.com',
+            'password': '758849',
+        },
+    )
+    assert response.status_code == HTTPStatus.CREATED
+    assert response.json() == {
+        'username': 'john_doe',
+        'email': 'johndoe34@gmail.com',
+        'id': 1,
+    }
