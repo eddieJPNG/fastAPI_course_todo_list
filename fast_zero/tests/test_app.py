@@ -31,3 +31,12 @@ def test_create_user():
         'email': 'johndoe34@gmail.com',
         'id': 1,
     }
+
+
+def test_delete_user_must_return_ok_and_message():
+    client = TestClient(app)
+
+    response = client.delete('/users/1')
+
+    assert response.status_code == HTTPStatus.OK
+    assert response.json() == {'message': 'User deleted!'}
