@@ -1,4 +1,5 @@
-# 📌 fast_zero
+# 📌 fast_zero(Em desenvolvimento)
+
 
 Pequena API de exemplo construída com **FastAPI** para gerenciar um cadastro simples de usuários em memória. O projeto foi desenvolvido como parte de um curso de FastAPI e visa demonstrar os conceitos básicos de criação de rotas, validação com Pydantic e testes automatizados.
 
